@@ -8,8 +8,8 @@ end
 
 def greet
     puts "------------------------------------------------"
-    puts "|Bienvenue sur 'ILS VEULENT TOUS MA POO' !      |"
-    puts "|Le but du jeu est d'être le dernier survivant !|"
+    puts "|Welcome in bloody_ruby_OOPs !                 |"
+    puts "|Be the last one alive !                       |"
     puts "-------------------------------------------------"
 end
 
