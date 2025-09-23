@@ -25,7 +25,7 @@ class Player
         if is_alive
             puts "#{name} has #{hp} HP."
         else
-            puts "#{name} is dead."
+            puts "#{name} is dead.".colorize(31)
         end
     end
 
@@ -46,7 +46,7 @@ class Player
         puts "#{name} takes #{dmg} damage"
         @hp -= dmg
         if is_alive == false
-            puts "#{name} was slain."
+            puts "#{name} was slain.".colorize(31)
             return
         else
             show_player_state
@@ -81,7 +81,7 @@ class HumanPlayer < Player
     end
 
     def show_player_state
-        puts "#{name} has #{hp} HP and a lvl #{weapon_lvl} weapon."
+        puts "#{name} has #{hp} HP and a lvl #{weapon_lvl} weapon.".colorize(33)
     end
 
     def compute_dmg
@@ -94,12 +94,12 @@ class HumanPlayer < Player
 
     def search_wpn
         dice = rand(1..6)
-        puts "You found a level #{dice} weapon."
+        puts "You found a level #{dice} weapon.".colorize(32)
         if dice > weapon_lvl
             @weapon_lvl = dice
-            puts "Weapon upgraded !"
+            puts "Weapon upgraded !".colorize(32)
         else
-            puts "Your current weapon is better. No upgrades."
+            puts "Your current weapon is better. No upgrades.".colorize(31)
         end
     end
 
@@ -108,8 +108,8 @@ class HumanPlayer < Player
             if @hp > 100
                 @hp = 100
             end
-            puts "#{added_hp} Health points restored."
-            puts "You now have #{hp} HP."
+            puts "#{added_hp} Health points restored.".colorize(32)
+            puts "You now have #{hp} HP.".colorize(32)
     end
 
     def search_hp
@@ -119,7 +119,7 @@ class HumanPlayer < Player
         elsif dice == 6
             add_hp(80)
         elsif dice == 1
-            puts "You didn't find HP."
+            puts "You didn't find HP.".colorize(31)
         end
     end
 

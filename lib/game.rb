@@ -30,12 +30,12 @@ class Game
     def arena_row_human
         puts
         for h in HumanPlayer.all
-            puts "#{h.name}'s turn !"
+            puts "#{h.name}'s turn !".colorize(32)
             h.show_player_state
-            puts "FIGHT (f), Heal (h), Upgrade (w)"
+            puts "FIGHT (f), Heal (h), Upgrade (w)".colorize(34)
             ask = gets.chomp.to_s
             if ask == "f" or ask == ""
-                puts "Who would you like to attack (Enter for random)"
+                puts "Who would you like to attack (Enter for random)".colorize(34)
                 ask2 = gets.chomp.to_s
                 defend = get_player_by_name(ask2)
                 h.attacks(defend)
@@ -44,6 +44,7 @@ class Game
             elsif ask == "w"
                 h.search_wpn
             end
+            sleep 2
         end
     end
 
@@ -61,15 +62,16 @@ class Game
         dice = rand(1..8)                       #spawn a minion
         if (1..2).include?(dice)
             @@ennemy_counter += 1
-            Player.new("Creep#{@@ennemy_counter}")
+            Player.new("creep#{@@ennemy_counter}")
         end
         if dice == 3
             @@ennemy_counter += 1
-            Boss.new("Boss#{@@ennemy_counter}")
+            Boss.new("boss#{@@ennemy_counter}")
         end
     end
 
     def arena
+        system "clear"
         user = HumanPlayer.all[0]
         puts "\nArena mode is starting."
         round = 1
@@ -91,7 +93,8 @@ class Game
 
     def create_user_player
         while true
-            puts "\nWhat will be your name ?"
+            puts "\nWhat will be your name ?".colorize(34)
+            puts "Tap enter to get the system name."
             ask = gets.chomp.to_s
             if ask == ""
                 ask = Etc.getlogin
@@ -102,13 +105,14 @@ class Game
     end
 
     def create_ennemies
-        puts "How many ennemies (to start with) ?"
+        puts "How many ennemies (to start with) ?".colorize(34)
+        puts "Tap enter for randomizer."
         nb = gets.chomp
         if nb == ""
-            nb = rand(3..6)
+            nb = rand(3..5)
         end
         nb = nb.to_i
-        puts "You creating #{nb.to_s} ennemies"
+        puts "Creating #{nb.to_s} ennemies"
         nb.times do                             #create bots
             @@ennemy_counter += 1
             Player.new("lord#{@@ennemy_counter}")
@@ -116,7 +120,7 @@ class Game
     end
 
     def initialize(game_name)
-        greet
+        greet_vampire
         create_ennemies
         create_user_player
         arena

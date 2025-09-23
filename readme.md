@@ -1,5 +1,21 @@
 # bloody_ruby_OOPs
 
+```
+...... .......  ......... .......... .......... . ..
+....@@@@@%........ .......  .. .......@@@@@@@@@.....
+...@=::..+@@@@@@@@@@@@-...#@@@@@@@@@@#:.:+++#%%.....
+ ..@%#++*%##-.. .......%@@:.......=*@@@*=-==@...... 
+. ...@%#@=.@%@@++-%%@@@+%#@@@@++#@#@....@.@@........
+.....=:.=.......@@+  .. @... ..@ ..@ .. @...... ....
+.... .@-*..@=..... .....*.  ...@....@ .-@.@.........
+ ...... @...%@..@...... -......* ..+@. = .... ......
+.........@%:@ .. @@....@@.:..:=@....@%@@........... 
+..........@+@........ ...... .... ..@@-..... .......
+. . .... .. .... .................. ... ............
+.............  .. ...... ...... .. .@.......... ... 
+```
+(These are vampire teeth... It's meant to be scary.)
+
 ## Project description
 
 This project is about learning to use objects in ruby while crating a small fighting RPG.
@@ -29,10 +45,26 @@ You can **spam enter** to make the program play by itself.
 - Username will be systems username
 - The living ennemies will be attacked randomly
 
+### app3.rb
+
+This one is like the 2nd with some improvements :
+- All the game code in refactored in the Game class
+- New ennemies (creeps) and Bosses may appear !
+- New welcome screen !
+
+The game is still not balanced and will probably not be. It's programmed to be hard as is !
+
 # Visual
 
 ![Image](img/visual.png)
 
+Image is taken from app2.rb
+
+# Compatibility
+
+This program is made to run appropriately on linux systems
+
 # Credits
 
 This program is done within the cursus of The Hacking Project
+The ascii is generated from the image https://www.youtube.com/watch?v=XxoOGyGJgUM
