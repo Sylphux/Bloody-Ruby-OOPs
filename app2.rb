@@ -2,7 +2,6 @@ require 'bundler'
 require 'etc'
 Bundler.require
 
-require_relative 'lib/game'
 require_relative 'lib/player'
 require_relative 'lib/visuals'
 
@@ -108,7 +107,7 @@ def perform
     bots = create_ennemies
     user = create_user_player
     arena(bots, user)
-    game_ov(user)
+    game_ov
 end
 
 perform

@@ -1,4 +1,5 @@
 class Player
+
     attr_accessor :name, :hp
     @@players = []
 
@@ -33,7 +34,7 @@ class Player
     end
 
     def attacks(ennemy)
-        if ennemy.is_alive #check before fighting if ennemy is alive
+        if ennemy.is_alive                  #check before fighting if ennemy is alive
             puts "\n#{name} attacks #{ennemy.name}"
             ennemy.gets_damage(compute_dmg)
         else
@@ -45,16 +46,30 @@ class Player
         puts "#{name} takes #{dmg} damage"
         @hp -= dmg
         if is_alive == false
-            puts "#{name} est mort."
+            puts "#{name} was slain."
             return
         else
             show_player_state
         end
     end
+
+end
+
+class Boss < Player
+
+    def initialize(name)
+        @name = name
+        @hp = 35
+        @@players << self
+    end
+    def compute_dmg
+        rand(5..10)
+    end
+
 end
 
 class HumanPlayer < Player
-    
+
     attr_accessor :name, :hp, :weapon_lvl
     @@HumanPlayers = []
 

@@ -13,11 +13,11 @@ def greet
     puts "-------------------------------------------------"
 end
 
-def game_ov(user)
+def game_ov
     puts "\n---------------------------------------------"
     puts "                GAME OVER                      "
-    if user.hp > 0
-        puts "Congrats #{user.name}, you won !"
+    if HumanPlayer.all[0].hp > 0
+        puts "Congrats #{HumanPlayer.all[0].name}, you won !"
     else
         puts "Noob, you lost."
     end
