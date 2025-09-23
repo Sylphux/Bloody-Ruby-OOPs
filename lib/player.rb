@@ -70,7 +70,7 @@ class HumanPlayer < Player
     end
 
     def compute_dmg
-        (rand(1..10) * weapon_lvl)
+        (rand(1..10) * @weapon_lvl)
     end
 
     def self.all
