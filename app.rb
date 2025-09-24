@@ -2,6 +2,7 @@ require 'bundler'
 Bundler.require
 
 require_relative 'lib/player'
+require_relative 'lib/visuals'
 
 #binding.pry
 
